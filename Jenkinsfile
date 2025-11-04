@@ -9,7 +9,7 @@ pipeline {
     stages{
         stage("Cloning"){
             steps{
-                git "https://github.com/kuldeepsharma100/webhook-flask-app.git"
+                git "https://github.com/kuldeepsharma100/practice-webhook.git"
             }
         }
         stage("Building"){
