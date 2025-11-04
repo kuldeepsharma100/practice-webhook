@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS = credentials('webhook-flask-app-id')
         IMAGE_NAME = 'kuldeepsharmaks1/flaskapp'
-        EC2_HOST = 'ubuntu@44.222.254.170'
+        CONTAINER_NAME = 'flaskappcont'
     }
 
     stages {
@@ -32,10 +32,10 @@ pipeline {
         stage('Deploy to EC2') {
             steps {
                     sh '''
-                        docker stop $IMAGE_NAME || true &&
-                        docker rm $IMAGE_NAME || true &&
+                        docker stop $CONTAINER_NAME || true &&
+                        docker rm $CONTAINER_NAME || true &&
 
-                        docker run -d --name $IMAGE_NAME -p 5000:5000 $IMAGE_NAME'''
+                        docker run -d --name $CONTAINER_NAME -p 5000:5000 $IMAGE_NAME'''
         
             }
         }
