@@ -34,13 +34,13 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-            emailext(
-                subject: "Jenkins Pipeline Result: ${currentBuild.fullDisplayName}",
-                body: "Build Status: ${currentBuild.currentResult}\nCheck console output at ${env.BUILD_URL}",
-                to: "kuldeepsharma74420@gmail.com"
-            )
-        }
-    }
+    // post {
+    //     always {
+    //         emailext(
+    //             subject: "Jenkins Pipeline Result: ${currentBuild.fullDisplayName}",
+    //             body: "Build Status: ${currentBuild.currentResult}\nCheck console output at ${env.BUILD_URL}",
+    //             to: "kuldeepsharma74420@gmail.com"
+    //         )
+    //     }
+    // }
 }
