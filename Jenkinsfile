@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'vinod' }
+    agent any
     environment {
         DOCKERHUB_CREDENTIALS = credentials('practice-webhook-id')
         IMAGE_NAME = 'kuldeepsharmaks1/practicewebhook'
